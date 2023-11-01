@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
+	"fyne.io/fyne/v2/container"
 	"image"
 	"image/png"
 	"io"
@@ -15,7 +16,11 @@ import (
 )
 
 func (app *Config) pricesTab() *fyne.Container {
-	return nil
+	chart := app.getChart()
+	chartContainer := container.NewVBox(chart)
+	app.PriceChartContainer = chartContainer
+
+	return chartContainer
 }
 
 func (app *Config) getChart() *canvas.Image {
@@ -25,6 +30,7 @@ func (app *Config) getChart() *canvas.Image {
 	err := app.downloadFile(apiURL, "gold.png")
 	if err != nil {
 		// use bundled image
+		img = canvas.NewImageFromResource(resourceUnreachablePng)
 	} else {
 		img = canvas.NewImageFromFile("gold.png")
 	}
