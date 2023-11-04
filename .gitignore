@@ -24,3 +24,6 @@ go.work
 /.idea
 
 project/db-data
+
+*.db
+
