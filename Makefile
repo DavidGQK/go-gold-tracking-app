@@ -1,7 +1,8 @@
-BINARY_NAME=GoldWatcher.app
+BINARY_NAME=GoldWatcher
 APP_NAME=GoldWatcher
 VERSION=1.0.1
 BUILD_NO=2
+APP_ID=ca.gocode.goldwatcher
 
 ## build: build binary and package app
 build:
