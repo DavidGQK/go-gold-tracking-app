@@ -13,7 +13,7 @@ import (
 )
 
 func (app *Config) holdingsTab() *fyne.Container {
-	app.Holdings := app.getHoldingSlice()
+	app.Holdings = app.getHoldingSlice()
 	app.HoldingsTable = app.getHoldingsTable()
 
 	holdingsContainer := container.NewBorder(
